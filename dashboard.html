@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Image Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Deepfake Analyzer</h1>
+
+        <div class="upload-section">
+            <input type="file" id="imageFile" class="file-input" accept="image/*" style="display: none;">
+            <button id="uploadBtn" class="upload-btn">Upload Image</button>
+        </div>
+
+        <div class="preview-container">
+            <img id="previewImage" class="preview-image" alt="Uploaded Image" style="display: none;">
+        </div>
+
+        <div class="analyze-section">
+            <center><button id="analyzeBtn" class="upload-btn" style="display: none;">Analyze Image</button></center>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="loading-text">Analyzing image... Please wait...</div>
+        </div>
+
+        <div class="result-section" id="result" style="display: none;"></div>
+
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
